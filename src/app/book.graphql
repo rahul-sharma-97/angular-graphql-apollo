@@ -1,0 +1,27 @@
+query getBooks{
+            books{
+        ...bookFragment
+    }
+}
+
+query getChapters{
+    chapter{
+        chapters{
+            ...chapterFragment
+            }
+    }
+    
+}
+
+fragment bookFragment on Book{
+  title
+    author {
+      name
+    }
+}
+
+fragment chapterFragment on Chapter{
+ id
+  name
+  description
+}

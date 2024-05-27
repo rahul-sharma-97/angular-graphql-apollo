@@ -1,0 +1,17 @@
+watch: true
+schema:
+ - http://localhost:33373/graphql
+documents:
+  - src/**/*.graphql
+generates:
+  ./src/services/myproject.service.ts:
+    plugins:
+      - typescript
+      - typescript-operations
+      - typescript-apollo-angular
+    config:
+      skipTypename: true
+      preResolveTypes: true
+      scalars:
+        DateTime: Date
+        Decimal: number
